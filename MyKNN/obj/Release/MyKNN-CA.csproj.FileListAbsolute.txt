@@ -1,0 +1,6 @@
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\bin\Release\MyKNN.exe.config
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\bin\Release\MyKNN.exe
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\bin\Release\MyKNN.pdb
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\obj\Release\MyKNN-CA.csprojResolveAssemblyReference.cache
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\obj\Release\MyKNN.exe
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\obj\Release\MyKNN.pdb

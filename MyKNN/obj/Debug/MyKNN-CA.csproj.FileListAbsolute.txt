@@ -1,0 +1,5 @@
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\bin\Debug\MyKNN.exe.config
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\bin\Debug\MyKNN.exe
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\bin\Debug\MyKNN.pdb
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\obj\Debug\MyKNN.exe
+D:\Users\Tomek\Documents\Visual Studio 2012\Projects\MyKNN-CA\MyKNN\obj\Debug\MyKNN.pdb
