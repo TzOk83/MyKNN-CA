@@ -140,7 +140,7 @@ namespace kNN
             string result = "";
             foreach (ValuePair<string, double> row in supval)
             {
-                result += row.Item2.ToString("0.000") + ",";
+                result += (Double.IsNaN(row.Item2) ? "" : row.Item2.ToString("0.000")) + ",";
             }
             return result;
         }
