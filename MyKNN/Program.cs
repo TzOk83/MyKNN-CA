@@ -99,7 +99,7 @@ namespace kNN
                         //Sortowanie wyniku w/g odległości od wektora testowego
                         distVector = distVector.OrderBy(x => x.Item2).ToList();
                         //Rozstrzyganie remisów na odległościach - rozszerznie "okna analizy"
-                        for (neiCount = 0; neiCount < k; )
+                        for (neiCount = 0; neiCount < k;)
                         {
                             //Wyznaczenie ile wśród k pierwszych najmniejszych odległości jest sobie równych
                             neiCount += distVector.Count(x => x.Item2.Equals(distVector.ElementAt(neiCount).Item2));
@@ -112,8 +112,9 @@ namespace kNN
                         //Wyznaczenie wartości wsparcia dla klas z opcjonalnym premiowaniem klas mniejszościowych
                         for (int i = 0; i < classLbls.GetLength(0); i++)
                             suppval[i].Item2 += (minorityBoost ? (1 - (double)classCnt[i] / classCnt.Sum()) : 1d) * (distVector.Take(neiCount).Where(x => x.Item1 == classLbls[i]).Sum(x => distWeight ? (dk - x.Item2) / (dk - d0 + 0.001) : 1d) / (double)neiCount);
-                            //suppval[i].Item2 += (validValues / training.Count) * (minorityBoost ? (1 - (double)classCnt[i] / classCnt.Sum()) : 1d) * (distVector.Take(neiCount).Count(x => x.Item1 == classLbls[i]) / (double)neiCount);
-                            //suppval[i].Item2 += (minorityBoost ? (1 - (double)classCnt[i] / classCnt.Sum()) : 1d) * (distVector.Take(neiCount).Count(x => x.Item1 == classLbls[i]) / (double)neiCount);
+                        //suppval[i].Item2 += (validValues / training.Count) * (minorityBoost ? (1 - (double)classCnt[i] / classCnt.Sum()) : 1d) * (distVector.Take(neiCount).Count(x => x.Item1 == classLbls[i]) / (double)neiCount);
+                        //suppval[i].Item2 += (minorityBoost ? (1 - (double)classCnt[i] / classCnt.Sum()) : 1d) * (distVector.Take(neiCount).Count(x => x.Item1 == classLbls[i]) / (double)neiCount);
+
                     }
                 }
             }
@@ -341,16 +342,16 @@ namespace kNN
             bool doCrossVal = (args[3] == "t" ? true : false);
             bool do2SetCrossVal = (args[3] == "2" ? true : false);
             bool distWeight = (args[4] == "t" ? true : false);
-
+            double acc = 0;
             parseCSV(trainfile, out trainset, out header);
             if (doCrossVal)
             {
-                CV_FPKNN(ref trainset, ref header, ofile, k, useMinBoost, useRangeCheck, distWeight, out TPC, out FPC);
+                acc = CV_FPKNN(ref trainset, ref header, ofile, k, useMinBoost, useRangeCheck, distWeight, out TPC, out FPC);
             }
             else if (do2SetCrossVal)
             {
                 parseCSV(testfile, out testset, out header);
-                CV2_FPKNN(ref trainset, ref testset, ref header, ofile, k, useMinBoost, useRangeCheck, distWeight, out TPC, out FPC);
+                acc = CV2_FPKNN(ref trainset, ref testset, ref header, ofile, k, useMinBoost, useRangeCheck, distWeight, out TPC, out FPC);
             }
             else
             {
